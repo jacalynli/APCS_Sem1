@@ -7,7 +7,7 @@ public class Lab_02
 		int b;
 		a = 7;
 		b = 5;
-		System.out.println ("a multiplied by b is " + a * b);
+		System.out.println (a + " multiplied by " + b + " is " + a * b);
 
 		System.out.println("\n");
 		

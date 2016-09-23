@@ -15,7 +15,7 @@ public class ID
 		String fName = keyboard.nextLine();
 		
 	//Last Name
-	System.out.println("Enter your first name:");
+	System.out.println("Enter your last name:");
 	
 		//Save what the user enters
 		String lName = keyboard.nextLine();
@@ -45,9 +45,9 @@ public class ID
 		String subject = keyboard.nextLine();
 		
 	System.out.println("**************************************");
-	System.out.printf("* %15s  %17s *", school, year);
-	System.out.printf("\n* %15s  %17s *", fName, lName);
-	System.out.printf("\n* %15s  %17s *", title, subject);
+	System.out.printf("* %12s  %17s *", school, year);
+	System.out.printf("\n* %12s  %17s *", fName, lName);
+	System.out.printf("\n* %12s  %17s *", title, subject);
 	System.out.println("\n**************************************");
 	}
 }
