@@ -48,7 +48,7 @@ public class Lab4_1
 		
 		double totalPayment = total.payment(p, r, n, t);
 		System.out.println(totalPayment);
-		System.out.printf("Your monthly payment will be %5.2f", totalPayment);
+		System.out.printf("Your monthly payment will be %.5f", totalPayment);
 	}
 	
 	public double payment(double p, double r, double n, double t)
