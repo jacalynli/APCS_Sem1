@@ -30,7 +30,6 @@ public class Rectangle
 		calcPerim();
 		//call print()
 		print();
-		
 	}
 	
 	public static void calcPerim()
