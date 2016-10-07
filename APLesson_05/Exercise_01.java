@@ -7,27 +7,31 @@ public class Exercise_01
 	{
 		//instantiate new random number
 		Random rand = new Random();
+		
+		//Player rolls integer
+		int numP = rand.nextInt(6)+1;
+		System.out.println("You rolled a " + numP);
+		
+		//Computer rolls integer
+		int numC = rand.nextInt(6)+1;
+		System.out.println("Computer rolled a " + numC);
+		
+		boolean rollDice = true;
+		if(rollDice(numP, numC))
+		{
+			System.out.println("Winner is you.");
+		}
+		
+		if(!rollDice(numP, numC))
+		{
+			System.out.println("Winner is computer.");
+		}
+		
+	}
+	
+	public static boolean rollDice(int numP, int numC)
+	{
+		return numP >= numC;
 	}
 }
 
-main() method
-Set the player roll integer to a random number between 1 and 6
-Set the computer roll integer to a random number between 1 and 6
-
-
-Set winner String to the output of rollDice()
-
-
-Print “You rolled a <your roll>”
-Print “Computer rolled a <computer’s roll>”
-Print “The winner is <winner>”
-
-
-rollDice() method
-If you roll higher than the computer
-    Winner is you 
-If computer rolls higher
-    Winner is computer
-
-
-Return winner
