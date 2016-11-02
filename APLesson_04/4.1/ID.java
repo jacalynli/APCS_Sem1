@@ -44,10 +44,10 @@ public class ID
 		//Save what the user enters
 		String subject = keyboard.nextLine();
 		
-	System.out.println("**************************************");
+	System.out.println("***********************************");
 	System.out.printf("* %12s  %17s *", school, year);
 	System.out.printf("\n* %12s  %17s *", fName, lName);
 	System.out.printf("\n* %12s  %17s *", title, subject);
-	System.out.println("\n**************************************");
+	System.out.println("\n***********************************");
 	}
 }
