@@ -58,13 +58,18 @@ public class Reciept
 	float Total = Subtotal + Tax;
 	
 	System.out.println("<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>");
-	System.out.printf("\n\n*%16s ........%10.2f", item1, cost1);
-	System.out.printf("\n*%16s ........%10.2f", item2, cost2);
-	System.out.printf("\n*%16s ........%10.2f", item3, cost3);
-	System.out.printf("\n\n\n*%16s ........%10.2f", "Subtotal:", Subtotal);
-	System.out.printf("\n*%16s ........%10.2f", "Tax:", Tax);
-	System.out.printf("\n*%16s ........%10.2f", "Total:", Total);
+	format(item1, cost1);
+	format(item2, cost2);
+	format(item3, cost3);
+	format("Subtotal:", Subtotal);
+	format("Tax:", Tax);
+	format("Total:", Total);
 	System.out.printf("\n______________________________________________");
 	System.out.println(" \n* Thank you for your support *");
+	}
+	
+	public static void format(String one, double two)
+	{
+		System.out.printf("\n* %15s.........%15.2f", one, two);
 	}
 }

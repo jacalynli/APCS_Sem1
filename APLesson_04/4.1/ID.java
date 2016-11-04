@@ -45,9 +45,14 @@ public class ID
 		String subject = keyboard.nextLine();
 		
 	System.out.println("***********************************");
-	System.out.printf("* %12s  %17s *", school, year);
-	System.out.printf("\n* %12s  %17s *", fName, lName);
-	System.out.printf("\n* %12s  %17s *", title, subject);
-	System.out.println("\n***********************************");
+	format(school, year);
+	format(fName, lName);
+	format(title, subject);
+	System.out.println("***********************************");
+	}
+	
+	public static void format(String one, String two)
+	{
+		System.out.printf("* %12s  %17s *\n", one, two);
 	}
 }
