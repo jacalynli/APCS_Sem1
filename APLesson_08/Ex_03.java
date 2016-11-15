@@ -2,16 +2,32 @@ import java.util.Scanner;
 
 public class Ex_03
 {
-	public static void main(string[]args)
+	public static void main(String[]args)
 	{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Please enter a number:");
-		num = keyboard.nextInt();
-		luck(num);
+		int num = keyboard.nextInt();
+		System.out.println(luck(num));
 	}
 	
-	public static void luck(int num)
+	public static int luck(int number)
 	{
 		
+		if (number > 0)
+		{
+			if (number % 10 == 7)
+			{
+				return 1 + luck(number / 10);
+			}
+			else
+			{
+				return 0 + luck(number / 10);
+			}
+		}
+		else
+		{
+			return 0;
+		}
+ 	
 	}
 }
