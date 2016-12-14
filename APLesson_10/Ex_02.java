@@ -39,7 +39,8 @@ public class Ex_02
 			
 		i++;
 		}
-		i = 0;
+		
+		
 		while(i < equation.size())
 		{
 			if(equation.get(i).equals("+") || equation.get(i).equals("-"))
