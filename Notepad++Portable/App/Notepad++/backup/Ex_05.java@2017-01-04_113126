@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class Ex_05
+{
+	static int bulletCount;
+	static int CLIPSIZE = 16;
+	static int shotCount;
+	static String [] clip;
+	
+	public static void main(String[]args)
+	{
+		bulletCount = 96;
+		shotCount = 0;
+//		clip = new String [CLIPSIZE];
+		resetClip();
+		
+		while(bulletCount || shotCount > 0)
+		
+		System.out.println("Action: ");
+		
+		if (keyboard.nextLine() = "R")
+		{
+			run reload();
+		}
+		
+		if (keyboard.nextLine() = "S")
+		{
+			System.out.println(Shoot());
+		}
+		
+		System.out.println(printClip());
+		
+		System.out.println("Out of Bullets!!!")
+		
+		
+	}
+	
+	public static void resetClip()
+	{
+		for(i = 0; i < clip.length; i++)
+		{
+			clip [i] = "[]"
+		}
+	}
+	
+	public static String shoot()
+	{
+		if (shotCount > 0)
+		{
+			clip[shotCount - 1] = "[]")
+			shotCount - 1;
+			return "Boom !!!"
+		}
+		
+		else 
+		{
+			return "Reload!!!"
+		}
+	}
+	
+	public static void reload()
+	{
+		if (bulletCount >= CLIPSIZE)
+		{
+			bulletCount - CLIPSIZE;
+			shotCount = CLIPSIZE;
+		}
+		else
+		{
+			shotCount = bulletCount
+			bulletCount = 0	
+		}
+		resetClip();
+		for(i = 0; i < shotCount.length; i++)
+			clip [i] = " * "
+	}
+	
+	public static void printClip()
+	{
+		String output = "";
+		output = output + "Bullets: \t" + bulletCount + "\n" + "Clip:" + "\t";
+		for (i = 0; i < CLIPSIZE.length; i++)
+			output = output + clip [i]
+	
+		System.out.println(output);
+		
+	}
+}
