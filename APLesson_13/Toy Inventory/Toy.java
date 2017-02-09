@@ -7,42 +7,34 @@ public abstract class Toy
 	public Toy()
 	{
 		this.name = "";
-		this.count = 0;
+		this.count = 1;
 	}
-	
 	//constructor with parameters
-	public Money(String n, int c)
+	public Toy(String n)
 	{
 		this.name = n;
-		this.value = v;
-		this.count = 0;
+		this.count = 1;
 	}
-	
 	public void setName(String n)
 	{
 		this.name = n;
 	}
-	
-	public void setCount(String c)
+	public void setCount(int c)
 	{
 		this.count = c;
 	}
-	
 	public String getName()
 	{
-		reutrn name;
+		return this.name;
 	}
-	
 	public int getCount()
 	{
-		return count;
+		return this.count;
 	}
-	
 	public abstract String getType();
-	
 	public String toString()
 	{
-		return name + ", " + count;
+		return this.name + ", " + this.count;
 	}
 	
 }
