@@ -15,6 +15,8 @@ public abstract class Toy
 		this.name = n;
 		this.count = 1;
 	}
+	
+	//modifiers
 	public void setName(String n)
 	{
 		this.name = n;
@@ -23,6 +25,8 @@ public abstract class Toy
 	{
 		this.count = c;
 	}
+	
+	//accessors
 	public String getName()
 	{
 		return this.name;
