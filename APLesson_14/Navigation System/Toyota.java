@@ -15,7 +15,8 @@ public class Toyota implements Location
 	public Toyota(String location)
 	{
 		System.out.println("Enter your location in the form (x, y)");
-		
+		String location = keyboard.nextLine();
+		ArrayList<double> coordinates = new ArrayList<double>(Arrays.asList(location.split(", ")));
 	}
 	
 	public int getID()
