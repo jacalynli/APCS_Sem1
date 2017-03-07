@@ -5,23 +5,23 @@ public class GMC implements Location
 {
 	Scanner keyboard = new Scanner(System.in);
 	
-	double x, y;
+	double coorx, coory;
 	
 	public GMC()
 	{
-		x = 0;
-		y = 0;
+		coorx = 0;
+		coory = 0;
 	}
 	
-	public GMC(double x, double y)
+	public GMC(double coorx, double coory)
 	{
 		System.out.println("Enter coordinate x:");
-		x = keyboard.nextDouble();
+		coorx = keyboard.nextDouble();
 		
 		keyboard.nextLine();
 		
 		System.out.println("Enter coordinate y:");
-		y = keyboard.nextDouble();
+		coory = keyboard.nextDouble();
 	}
 	
 	public int getID()
@@ -29,11 +29,17 @@ public class GMC implements Location
 		return (int)(Math.random() * 100000 + 1);
 	}
 	
+	public void move(double x, double y)
+	{	
+		coorx += x; 
+		coory += y;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+	}
+	
 	public double[] getLoc()
 	{
 		double[] loc = new double[2];
-		loc[0] = x;
-		loc[1] = y;
+		loc[0] = coorx;
+		loc[1] = coory;
 		
 		return loc;
 	}
