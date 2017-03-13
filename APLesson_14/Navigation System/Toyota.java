@@ -1,24 +1,15 @@
 import java.util.*;
 
-public class Toyota implements Location
+public class Toyota extends Car
 {
-	Scanner keyboard = new Scanner(System.in);
 	
-	String location;
 	double coorx, coory;
-	
-	public Toyota()
-	{
-		location = "";
-	}
 	
 	public Toyota(String location)
 	{
-		System.out.println("Enter your location in the form (x, y)");
-		location = keyboard.nextLine();
-		ArrayList<String> coordinates = new ArrayList<String>(Arrays.asList(location.split(", ")));
-		coorx = Double.parseDouble(coordinates.get(0));
-		coory = Double.parseDouble(coordinates.get(1));
+		String[] coordinates = location.split(", ");
+		coorx = Double.parseDouble(coordinates[0]);
+		coory = Double.parseDouble(coordinates[1]);
 	}
 	
 	public void move(double x, double y)
@@ -29,7 +20,7 @@ public class Toyota implements Location
 	
 	public int getID()
 	{
-		return (int)(Math.random() * 100000 + 1);
+		return ID;
 	}
 	
 	public double[] getLoc()

@@ -1,32 +1,19 @@
 import java.lang.Math;
-import java.util.Scanner; 
 
-public class GMC implements Location
+public class GMC extends Car
 {
-	Scanner keyboard = new Scanner(System.in);
-	
 	double coorx, coory;
 	
-	public GMC()
-	{
-		coorx = 0;
-		coory = 0;
-	}
 	
 	public GMC(double coorx, double coory)
 	{
-		System.out.println("Enter coordinate x:");
-		coorx = keyboard.nextDouble();
-		
-		keyboard.nextLine();
-		
-		System.out.println("Enter coordinate y:");
-		coory = keyboard.nextDouble();
+		this.coorx = coorx;
+		this.coory = coory;
 	}
 	
 	public int getID()
 	{
-		return (int)(Math.random() * 100000 + 1);
+		return ID;
 	}
 	
 	public void move(double x, double y)

@@ -1,17 +1,12 @@
 import java.util.*;
 
-public class Honda implements Location
+public class Honda extends Car
 {
-	double[] honLoc = new double[2];
+	
 	double coorx, coory;
 	
-	public Honda()
-	{
-		coorx = 0;
-		coory = 0;
-	}
-	
-	public Honda(double coorx, double coory, double[] honLoc)
+		
+	public Honda(double[] honLoc)
 	{
 		coorx = honLoc[0];
 		coory = honLoc[1];
@@ -19,7 +14,7 @@ public class Honda implements Location
 	
 	public int getID()
 	{
-		return (int)(Math.random() * 100000 + 1);
+		return ID;
 	}
 	
 	public void move(double x, double y)
@@ -31,7 +26,8 @@ public class Honda implements Location
 	public double[] getLoc()
 	{
 		double[] loc = new double[2];
-		loc = honLoc;
+		loc[0] = coorx;
+		loc[1] = coory;
 		
 		return loc;
 	}
