@@ -64,6 +64,11 @@ public class Magpie2
 		{
 			response = "Tell me more about your pet.";
 		}
+		
+		else if (statement.indexOf("Robinette") >= 0)
+		{
+			response = "He sounds like a pretty dank teacher.";
+		}
 		 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
