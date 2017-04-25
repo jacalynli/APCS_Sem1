@@ -98,6 +98,41 @@ public class Picture extends SimplePicture
     }
   }
   
+   /** Method to negate all colors */
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(255 - pixelObj.getRed());
+		pixelObj.setGreen(255 - pixelObj.getGreen());
+		pixelObj.setBlue(255 - pixelObj.getBlue());
+      }
+    }
+  }
+  
+   /** Method to average all colors */
+  public void grayscale()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int R = pixelObj.getRed();
+		int G = pixelObj.getGreen();
+		int B = pixelObj.getBlue();
+		int avg = (R + G + B) / 3;
+		
+		pixelObj.setRed(avg);
+		pixelObj.setGreen(avg);
+		pixelObj.setBlue(avg);
+      }
+    }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -114,6 +149,66 @@ public class Picture extends SimplePicture
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
+      }
+    } 
+  }
+  
+  /** Method that mirrors the picture around a 
+    * vertical mirror in the center of the picture
+    * from right to left */
+   public void mirrorVerticalRightToLeft()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < width / 2; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][width - 1 - col];
+        leftPixel.setColor(rightPixel.getColor());
+      }
+    } 
+  }
+  
+    /** Method that mirrors the picture around a 
+    * horizontal mirror in the center of the picture
+    * from bottom to top */
+   public void mirrorHorizontalBotToTop()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int height = pixels.length;
+    for (int row = 0; row < height / 2; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[height - 1 - row][col];
+        topPixel.setColor(bottomPixel.getColor());
+      }
+    } 
+  }
+  
+   /** Method that mirrors the picture around a 
+    * horizontal mirror in the center of the picture
+    * from top to bottom */
+    public void mirrorHorizontal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int height = pixels.length;
+    for (int row = 0; row < height / 2; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[height - 1 - row][col];
+        bottomPixel.setColor(topPixel.getColor());
       }
     } 
   }
@@ -138,8 +233,38 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+		count++;
+		
       }
     }
+	System.out.println("Excecutes " + count + " times.");
+  }
+  
+  /** Mirrors the arms of the snowman */
+  public void mirrorArms()
+  {
+    int mirrorPoint = 191;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 27; row < 97; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 13; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+		count++;
+		
+      }
+    }
+	System.out.println("Excecutes " + count + " times.");
   }
   
   /** copy from the passed fromPic to the
@@ -223,9 +348,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
+    Picture beach = new Picture("snowman.jpg");
     beach.explore();
   }
   
