@@ -8,17 +8,16 @@ public class Card {
 	/**
 	 * String value that holds the suit of the card
 	 */
-	private String suit;
-
+	private String cardSuit;
 	/**
 	 * String value that holds the rank of the card
 	 */
-	private String rank;
+	private String cardRank;
 
 	/**
 	 * int value that holds the point value.
 	 */
-	private int pointValue;
+	private int cardPointValue;
 
 
    /**
@@ -32,9 +31,9 @@ public class Card {
 	 *                  containing the point value of the card
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
-		cardRank = this.cardRank;
-		cardSuit = this.cardSuit;
-		cardPointValue = this.cardPointValue;
+		this.cardRank = cardRank;
+		this.cardSuit = cardSuit;
+		this.cardPointValue = cardPointValue;
 	}
 
 
@@ -69,7 +68,12 @@ public class Card {
 	 *         false otherwise.
 	 */
 	public boolean matches(Card otherCard) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		if (otherCard.suit().equals(this.suit())
+			&& otherCard.rank().equals(this.rank())
+			&& otherCard.pointValue()==(this.pointValue()))
+			return true;
+		else
+			return false;
 	}
 
 	/**
