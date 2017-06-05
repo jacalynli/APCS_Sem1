@@ -1,4 +1,4 @@
-public class Magpie2
+public class Magpie3
 {
 	/** Get a default greeting @return a greeting*/
 	public String getGreeting()

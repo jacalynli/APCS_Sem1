@@ -126,10 +126,11 @@ private String transformIWantToStatement(String statement)
 
   /*** Set new String restOfStatement to the rest of statement after the**/
    /*** "I want to ".**/
-   String restOfStatement = statement.substring(psn + 9, statement.indexOf(lastChar) + 1);
+   String restOfStatement = statement.substring(psn + 9, statement.indexOf(lastChar)+ 1);
    
       /*** return "What would it mean to" + restOfStatement; **/
 	  
+	
 	  return "What would it mean to" + restOfStatement + "?";
 }
 
