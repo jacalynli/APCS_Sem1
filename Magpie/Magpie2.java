@@ -75,6 +75,12 @@ public class Magpie2
 		{
 		  response = transformIWantToStatement(statement);
 		}
+		
+		else if (findKeyword(statement, "I hate you", 0) >= 0)
+		{
+		  response = "Why do you hate me?";
+		}
+		
 
 
 		else
@@ -163,6 +169,39 @@ private String transformYouMeStatement(String statement)
    /* Set new String restOfStatement to the rest of statement after "You" + 3,
    /* and before "me".*/
 	String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe);
+   /* return "What makes you think that I " + restOfStatement + "you?"*/
+   /* */
+   return "What makes you think that I" + restOfStatement + "you?";
+}
+
+/**
+* Take a statement with "you <something> me" and transform it into
+* "What makes you think that I <something> you?"
+* @param statement the user statement, assumed to contain "you" followed by "me"
+* @return the transformed statement
+*/
+private String transformIYouStatement(String statement)
+{
+  /**
+   /* trim the statement */
+   statement = statement.trim(); 
+   /* Set new String lastChar to the last character in statement*/
+   String lastChar = statement.substring(statement.length());
+   /* if lastChar is a period...*/
+   /*        remove the period*/
+   if (lastChar.equals("."))
+   {
+	   lastChar = statement.substring(statement.length() - 1);
+   }
+   /* Set new int psnOfYou to the result of findKeyword*/
+   /*        @param statement and "you"*/
+   int psnOfYou = findKeyword(statement, "I");
+   /* Set new int psnOfMe to the result of findKeyword*/
+   /*      @param statement, "me", and psnOfYou + 3*/
+   int psnOfMe = findKeyword(statement, "you", psnOfYou + 4);
+   /* Set new String restOfStatement to the rest of statement after "You" + 3,
+   /* and before "me".*/
+	String restOfStatement = statement.substring(psnOfYou + 4, psnOfMe);
    /* return "What makes you think that I " + restOfStatement + "you?"*/
    /* */
    return "What makes you think that I" + restOfStatement + "you?";
